@@ -22,7 +22,7 @@ First of all, ensure you install jQuery, and select2- for example, the below.
 <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 ```
 ## Usage
-The package is quite straight forward, and can be used directive in a **LIVEWIRE** component, see below the basic usage
+The package is quite straight forward, and can be used directly in a **LIVEWIRE** component, see below the basic usage
 ```html
 <livewire:select-2 :options="$this->vehicles" onchange="triggerMyFunction" name="vehicles"/>
 ```
