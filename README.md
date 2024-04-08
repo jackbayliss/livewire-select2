@@ -15,17 +15,48 @@ You can install the package via composer:
 composer require jackbayliss/livewire-select2
 ```
 ## Initial Setup
-First
-```php
-$livewireSelect2 = new JackBayliss\LivewireSelect2();
-echo $livewireSelect2->echoPhrase('Hello, JackBayliss!');
+First of all, ensure you install jQuery, and select2- for example, the below.
+```html
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 ```
 ## Usage
+The package is quite straight forward, and can be used directive in a **LIVEWIRE** component, see below the basic usage
+```html
+<livewire:select-2 :options="$this->vehicles" onchange="triggerMyFunction" name="vehicles"/>
+```
+
+## Component Params
+#### options (required) - array
+The select2 component expects an array of options, this can be for example - you must pass this into the options param as per the above.
+```php
+    public $vehicles = ['Ford','Vauxhall','Seat'];
+```
+
+#### onchange (required) - string
+The select2 component expects a string of the listener function to call. For example, `triggerMyFunction` below
+
+```html
+<livewire:select-2 :options="$this->vehicles" onchange="triggerMyFunction" name="vehicles"/>
+```
+
+
+> [!TIP]
+> In order to create a listener, you should do the below. This means, whenever the select2 component is changed - ie an option clicked, it will call the function you defined, and you can do as you wish with the logic.
 
 ```php
-$livewireSelect2 = new JackBayliss\LivewireSelect2();
-echo $livewireSelect2->echoPhrase('Hello, JackBayliss!');
+
+    protected $listeners = ['triggerMyFunction'];
+
+    public function triggerMyFunction($data){
+        dd($data['name'],$data['data']);
+    }
+
 ```
+> [!IMPORTANT]  
+> Whatever string you pass to the onchange param, ensure you create a listener and function like the above. **Your function must accept one parameter, this is the array of data returned which includes name and data, name being the name you set on the component (if you did set one) and the data ie the value selected.**
+
 
 ## Testing WIP
 
