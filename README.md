@@ -10,6 +10,7 @@ Easy to use Livewire component specifically for select2.
 ## Installation
 
 You can install the package via composer:
+This currently works on Livewire v3, I haven't tested 2 yet.
 
 ```bash
 composer require jackbayliss/livewire-select2
