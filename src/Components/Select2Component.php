@@ -24,7 +24,7 @@ class Select2Component extends Component
     public function mount()
     {
         $this->id = Str::uuid();
-        if (! isset($this->options) || count($this->options) == 0 ) {
+        if (! isset($this->options) || count($this->options) == 0) {
             throw new NoAttributeException('You must specify an options array to the select2 component and it must include more than 0 item/s!');
         }
         if (! isset($this->onchange)) {
@@ -34,8 +34,8 @@ class Select2Component extends Component
 
     /**
      * Calls the users defined onchange emit function
-     * @param string $id
-     * @param $data
+     *
+     * @param  string  $id
      * @return void
      */
     public function select2Change($data)
