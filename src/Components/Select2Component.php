@@ -11,6 +11,7 @@ class Select2Component extends Component
     public ?string $id = null;
 
     public ?string $name = null;
+
     public ?string $model = null;
 
     public ?array $options = [];
