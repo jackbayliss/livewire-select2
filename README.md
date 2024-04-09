@@ -18,7 +18,8 @@ I haven't tested 2 yet.
 composer require jackbayliss/livewire-select2
 ```
 ## Initial Setup
-First of all, ensure you install jQuery, and select2- for example, the below.
+First of all, ensure you install jQuery, and select2- for example, the below. You can also install these via npm and import it into your app.js. 
+Main thing is ensuring the scripts are included anywhere you want select2 to work.
 ```html
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
