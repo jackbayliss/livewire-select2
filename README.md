@@ -32,7 +32,7 @@ The package is quite straight forward, and can be used directly in a **LIVEWIRE*
 #### options (required) - array
 The select2 component expects an array of options, this can be for example - you must pass this into the options param as per the above.
 ```php
-    public $vehicles = ['Ford','Vauxhall','Seat'];
+public $vehicles = ['Ford','Vauxhall','Seat'];
 ```
 
 #### onchange (required) - string
@@ -58,6 +58,45 @@ The select2 component expects a string of the listener function to call. For exa
 > [!IMPORTANT]  
 > Whatever string you pass to the onchange param, ensure you create a listener and function like the above. **Your function must accept one parameter, this is the array of data returned which includes name and data, name being the name you set on the component (if you did set one) and the data ie the value selected.**
 
+
+## Full Example
+####  Base component
+I have an initial component, which I am calling as <livewire:test> in my blade. The component is below:
+```php
+<?php
+
+namespace App\Livewire;
+
+use Livewire\Component;
+class Test extends Component
+{
+
+    public string $selectedVehicle = 'N/A';
+    public array $vehicles = ['Ford','Vauxhall','Seat'];
+
+    protected $listeners = ['callVehicles'];
+
+    public function callVehicles($output){
+            if(in_array($output['data'],$this->vehicles)){
+                $this->selectedVehicle = $output['data'];
+            }
+    }
+    public function render()
+    {
+        return view('livewire.test');
+    }
+}
+
+```
+####  The view, is basic and looks like the below:
+```
+<div>
+<livewire:select-2 :options="$this->vehicles" onchange="callVehicles" name="vehicles"/>
+{{ $this->selectedVehicle }}
+</div>
+
+
+```
 
 ## Testing WIP
 
