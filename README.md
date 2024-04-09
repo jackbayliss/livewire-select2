@@ -1,4 +1,4 @@
-# Simple to use Livewire component for Select2
+![test-component](https://github.com/jackbayliss/livewire-select2/assets/13621738/11680500-c26e-4bb9-8a3d-5f07cd8bf79b)# Simple to use Livewire component for Select2
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/jackbayliss/livewire-select2.svg?style=flat-square)](https://packagist.org/packages/jackbayliss/livewire-select2)
 [![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/jackbayliss/livewire-select2/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/jackbayliss/livewire-select2/actions?query=workflow%3Arun-tests+branch%3Amain)
@@ -97,6 +97,9 @@ class Test extends Component
 
 
 ```
+You then get the below...
+
+![test-component](https://github.com/jackbayliss/livewire-select2/assets/13621738/1fb1dfaf-cc1d-44b5-82a5-4cff50e7b679)
 
 ## Testing WIP
 
