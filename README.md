@@ -5,7 +5,7 @@
 [![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/jackbayliss/livewire-select2/fix-php-code-style-issues.yml?branch=main&label=code%20style&style=flat-square)](https://github.com/jackbayliss/livewire-select2/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
 [![Total Downloads](https://img.shields.io/packagist/dt/jackbayliss/livewire-select2.svg?style=flat-square)](https://packagist.org/packages/jackbayliss/livewire-select2)
 
-Easy to use Livewire component specifically for select2. 
+Easy to use Livewire component specifically for Select2. 
 
 ## Installation
 
@@ -28,7 +28,7 @@ The package is quite straight forward, and can be used directly in a **LIVEWIRE*
 <livewire:select-2 :options="$this->vehicles" onchange="triggerMyFunction" name="vehicles"/>
 ```
 
-## Component Params
+## Component parameters
 #### options (required) - array
 The select2 component expects an array of options, this can be for example - you must pass this into the options param as per the above.
 ```php
@@ -36,12 +36,12 @@ public $vehicles = ['Ford','Vauxhall','Seat'];
 ```
 
 #### onchange (required) - string
-The select2 component expects a string of the listener function to call. For example, `triggerMyFunction` below
+The select2 component expects a string of the listener function to call. For example, `triggerMyFunction`- you can see how to do this below.
 
 #### name (not required) - string
-You can pass this to your component if you need specific logic based on the name
+You can pass this to your component if you need specific logic based on the name.
 #### model (not required) - string
-You can pass an option value in as model, this then auto selects the option- useful in a case where a selection has already been mad
+You can pass an option value in as model, this then auto selects the option- useful in a case where a selection has already been made.
 ```html
 <livewire:select-2 :options="$this->vehicles" onchange="callVehicles" name="vehicles" model="Vauxhall"/>
 
@@ -57,7 +57,7 @@ This allows you to select multiple options, as per select2 usually does and shou
 
 ## Creating a Listener
 > [!TIP]
-> In order to create a listener, you should do the below. This means, whenever the select2 component is changed - ie an option clicked, it will call the function you defined, and you can do as you wish with the logic.
+> A listener is required for the onchange param, in order to create a listener, you should do the below. This means, whenever the select2 component is changed - ie an option clicked, it will call the function you defined, and you can do as you wish with the logic.
 
 ```html
 <livewire:select-2 :options="$this->vehicles" onchange="triggerMyFunction" name="vehicles"/>
