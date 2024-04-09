@@ -1,7 +1,7 @@
 
 
 <div wire:ignore>
-    <select class="select2-{{$this->id}}">
+    <select class="select2-{{$this->id}}" @if($this->multiple) multiple="multiple" @endif >
         @foreach($this->options as $option)
             <option value="{{$option}}">{{$option}}</option>
         @endforeach
@@ -19,8 +19,8 @@
 
         function prepareSelect2(){
             $('.select2-{{$this->id}}').select2().on('change', function(e) {
-                var data = $(this).select2("data")[0].text // get the value of the data selected.
-                @this.select2Change(data) // emit the data back to the user defined function
+                var data = $(this).select2("val")
+                @this.select2Change(data)
             })
         }
     })

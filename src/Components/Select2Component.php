@@ -11,8 +11,11 @@ class Select2Component extends Component
     public ?string $id = null;
 
     public ?string $name = null;
+    public ?string $model = null;
 
     public ?array $options = [];
+
+    public bool $multiple = false;
 
     public ?string $onchange;
 
@@ -23,6 +26,7 @@ class Select2Component extends Component
      */
     public function mount()
     {
+
         $this->id = Str::uuid();
         if (! isset($this->options) || count($this->options) == 0 ) {
             throw new NoAttributeException('You must specify an options array to the select2 component and it must include more than 0 item/s!');
