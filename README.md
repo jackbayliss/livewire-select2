@@ -89,7 +89,7 @@ class Test extends Component
 
 ```
 ####  The view, is basic and looks like the below:
-```
+```html
 <div>
 <livewire:select-2 :options="$this->vehicles" onchange="callVehicles" name="vehicles"/>
 {{ $this->selectedVehicle }}
