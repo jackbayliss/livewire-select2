@@ -28,7 +28,7 @@ Main thing is ensuring the scripts are included anywhere you want select2 to wor
 ## Usage
 The package is quite straight forward, and can be used directly in a **LIVEWIRE** component, see below the basic usage
 ```html
-<livewire:select-2 :options="$this->vehicles" onchange="triggerMyFunction" name="vehicles"/>
+<livewire:select-2 :options="$this->vehicles" onchange="triggerMyFunction" name="vehicles" model="Vauxhall" multiple/>
 ```
 
 ## Component parameters
