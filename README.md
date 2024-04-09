@@ -59,7 +59,7 @@ The select2 component expects a string of the listener function to call. For exa
 > Whatever string you pass to the onchange param, ensure you create a listener and function like the above. **Your function must accept one parameter, this is the array of data returned which includes name and data, name being the name you set on the component (if you did set one) and the data ie the value selected.**
 
 
-## Full Example
+## Example / How it works in practice
 ####  Base component
 I have an initial component, which I am calling as <livewire:test> in my blade. The component is below:
 ```php
