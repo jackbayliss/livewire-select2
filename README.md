@@ -41,8 +41,8 @@ public $vehicles = ['Ford','Vauxhall','Seat'];
 #### onchange (required) - string
 The select2 component expects a string of the listener function to call. For example, `triggerMyFunction`- you can see how to do this below.
 The onchange function, expects one param. The param returned from this component is an array of data - which includes the following:
-##### Name - The name param you passed in, this can be used in your custom function if required
-##### Data - This is the values returned from the select2 change, if you have not set the multiple param, this is a string- otherwise its an array. Please see https://github.com/jackbayliss/livewire-select2?tab=readme-ov-file#base-component if theres any confusion
+##### Name - The name param you passed in, this can be used in your custom function if required - this is null if not supplied.
+##### Data - This is the values returned from the select2 change, if you have not set the multiple param, this is a string- otherwise its an array. Please see https://github.com/jackbayliss/livewire-select2?tab=readme-ov-file#base-component if theres any confusion.
 > [!IMPORTANT]  
 > Ensure your function includes one parameter, for example `triggerMyFunction($select2)`
 
