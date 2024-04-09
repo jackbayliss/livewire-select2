@@ -112,7 +112,7 @@ class Test extends Component
 }
 
 ```
-####  The view, is basic and looks like the below:
+####  The view, is basic and looks like the below - main thing to take away is how the component is used:
 ```html
 <div>
 <livewire:select-2 :options="$this->vehicles" onchange="callVehicles" name="vehicles"/>
