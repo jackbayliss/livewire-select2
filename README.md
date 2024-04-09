@@ -5,18 +5,21 @@
 [![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/jackbayliss/livewire-select2/fix-php-code-style-issues.yml?branch=main&label=code%20style&style=flat-square)](https://github.com/jackbayliss/livewire-select2/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
 [![Total Downloads](https://img.shields.io/packagist/dt/jackbayliss/livewire-select2.svg?style=flat-square)](https://packagist.org/packages/jackbayliss/livewire-select2)
 
-Easy to use Livewire component specifically for select2. 
+Easy to use Livewire component specifically for Select2. 
 
 ## Installation
 
 You can install the package via composer:
-This currently works on Livewire v3, I haven't tested 2 yet.
+This currently works on Livewire v3, ie Laravel 11.  
+
+I haven't tested 2 yet.
 
 ```bash
 composer require jackbayliss/livewire-select2
 ```
 ## Initial Setup
-First of all, ensure you install jQuery, and select2- for example, the below.
+First of all, ensure you install jQuery, and select2- for example, the below. You can also install these via npm and import it into your app.js. 
+Main thing is ensuring the scripts are included anywhere you want select2 to work.
 ```html
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
@@ -28,23 +31,46 @@ The package is quite straight forward, and can be used directly in a **LIVEWIRE*
 <livewire:select-2 :options="$this->vehicles" onchange="triggerMyFunction" name="vehicles"/>
 ```
 
-## Component Params
+## Component parameters
 #### options (required) - array
 The select2 component expects an array of options, this can be for example - you must pass this into the options param as per the above.
 ```php
 public $vehicles = ['Ford','Vauxhall','Seat'];
 ```
-
+> [!IMPORTANT]  
+> Ensure your function includes one parameter, for example `triggerMyFunction($select2)`
 #### onchange (required) - string
-The select2 component expects a string of the listener function to call. For example, `triggerMyFunction` below
+The select2 component expects a string of the listener function to call. For example, `triggerMyFunction`- you can see how to do this below.
+The onchange function, expects one param. The param returned from this component is an array of data - which includes the following:
+##### Name - The name param you passed in, this can be used in your custom function if required
+##### Data - This is the values returned from the select2 change, if you have not set the multiple param, this is a string- otherwise its an array. Please see https://github.com/jackbayliss/livewire-select2?tab=readme-ov-file#base-component if theres any confusion
+
+
+#### name (not required) - string
+You can pass this to your component if you need specific logic based on the name.
+#### model (not required) - string
+You can pass an option value in as model, this then auto selects the option- useful in a case where a selection has already been made.
+```html
+<livewire:select-2 :options="$this->vehicles" onchange="callVehicles" name="vehicles" model="Vauxhall"/>
+
+```
+#### multiple (not required) - blank param    
+> [!TIP]
+> If this is used, the data will be returned as an array, rather than a string.
+
+This allows you to select multiple options, as per select2 usually does and should be used like the following:
+```html
+<livewire:select-2 :options="$this->vehicles" onchange="callVehicles" name="vehicles" multiple/>
+```
+
+## Creating a Listener
+> [!TIP]
+> A listener is required for the onchange param, in order to create a listener, you should do the below. This means, whenever the select2 component is changed - ie an option clicked, it will call the function you defined, and you can do as you wish with the logic.
 
 ```html
 <livewire:select-2 :options="$this->vehicles" onchange="triggerMyFunction" name="vehicles"/>
 ```
 
-
-> [!TIP]
-> In order to create a listener, you should do the below. This means, whenever the select2 component is changed - ie an option clicked, it will call the function you defined, and you can do as you wish with the logic.
 
 ```php
 
@@ -89,7 +115,7 @@ class Test extends Component
 }
 
 ```
-####  The view, is basic and looks like the below:
+####  The view, is basic and looks like the below - main thing to take away is how the component is used:
 ```html
 <div>
 <livewire:select-2 :options="$this->vehicles" onchange="callVehicles" name="vehicles"/>
