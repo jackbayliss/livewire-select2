@@ -38,13 +38,26 @@ public $vehicles = ['Ford','Vauxhall','Seat'];
 #### onchange (required) - string
 The select2 component expects a string of the listener function to call. For example, `triggerMyFunction` below
 
+#### name (not required) - string
+You can pass this to your component if you need specific logic based on the name
+
+#### muliple (not required) - blank param    
+> [!TIP]
+> If this is used, the data will be returned as an array, rather than a string.
+
+This allows you to select multiple options, as per select2 usually does and should be used like the following:
+```html
+<livewire:select-2 :options="$this->vehicles" onchange="callVehicles" name="vehicles" multiple/>
+```
+
+## Creating a Listener
+> [!TIP]
+> In order to create a listener, you should do the below. This means, whenever the select2 component is changed - ie an option clicked, it will call the function you defined, and you can do as you wish with the logic.
+
 ```html
 <livewire:select-2 :options="$this->vehicles" onchange="triggerMyFunction" name="vehicles"/>
 ```
 
-
-> [!TIP]
-> In order to create a listener, you should do the below. This means, whenever the select2 component is changed - ie an option clicked, it will call the function you defined, and you can do as you wish with the logic.
 
 ```php
 
