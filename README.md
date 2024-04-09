@@ -75,7 +75,8 @@ class Test extends Component
     public array $vehicles = ['Ford','Vauxhall','Seat'];
 
     protected $listeners = ['callVehicles'];
-
+    
+    // DO YOUR OWN LOGIC...
     public function callVehicles($output){
             if(in_array($output['data'],$this->vehicles)){
                 $this->selectedVehicle = $output['data'];
