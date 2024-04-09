@@ -40,8 +40,13 @@ The select2 component expects a string of the listener function to call. For exa
 
 #### name (not required) - string
 You can pass this to your component if you need specific logic based on the name
+#### model (not required) - string
+You can pass an option value in as model, this then auto selects the option- useful in a case where a selection has already been mad
+```html
+<livewire:select-2 :options="$this->vehicles" onchange="callVehicles" name="vehicles" model="Vauxhall"/>
 
-#### muliple (not required) - blank param    
+```
+#### multiple (not required) - blank param    
 > [!TIP]
 > If this is used, the data will be returned as an array, rather than a string.
 
