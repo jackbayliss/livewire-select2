@@ -123,10 +123,17 @@ class Test extends Component
 </div>
 
 
+
 ```
 You then get the below...
 
 ![test-component](https://github.com/jackbayliss/livewire-select2/assets/13621738/1fb1dfaf-cc1d-44b5-82a5-4cff50e7b679)
+
+## Stuck?
+I have an example project setup below.. you can simply download it and composer install. 
+
+
+https://github.com/jackbayliss/livewire-select-2-example-proj
 
 ## Testing WIP
 
