@@ -54,6 +54,23 @@ You can pass an option value in as model, this then auto selects the option- use
 <livewire:select-2 :options="$this->vehicles" onchange="callVehicles" name="vehicles" model="Vauxhall"/>
 
 ```
+#### How to add class 
+This will apply the CSS class example to the Livewire Select2 component, allowing you to style it according to your needs.
+
+```css
+<style>
+        .example{
+            width: 50% !important;
+        }
+</style>
+```
+
+```html
+<livewire:select-2 :options="$this->vehicles" onchange="triggerMyFunction" name="vehicles" model="Vauxhall" multiple :class="'example'"/>
+```
+
+
+
 #### multiple (not required) - blank param    
 > [!TIP]
 > If this is used, the data will be returned as an array, rather than a string.
