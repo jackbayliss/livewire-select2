@@ -3,7 +3,7 @@
 <div wire:ignore>
     <select class="select2-{{$this->id}}" @if($this->multiple) multiple="multiple" @endif >
         @foreach($this->options as $key => $option)
-            <option value="{{$key}}" @if($option == $this->model) selected @endif>{{$option}}</option>
+            <option value="{{$key}}" @if($key == $this->model) selected @endif>{{$option}}</option>
         @endforeach
     </select>
 </div>
