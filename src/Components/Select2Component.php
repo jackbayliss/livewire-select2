@@ -21,7 +21,7 @@ class Select2Component extends Component
     public ?string $onchange;
 
     public ?string $class;
-    
+
     protected $listeners = ['select2Change'];
 
     /**
