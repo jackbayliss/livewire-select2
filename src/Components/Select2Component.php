@@ -41,9 +41,6 @@ class Select2Component extends Component
 
     /**
      * Calls the users defined onchange emit function
-     *
-     * @param $data
-     * @return void
      */
     public function select2Change($data): void
     {
