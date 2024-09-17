@@ -41,11 +41,8 @@ class Select2Component extends Component
 
     /**
      * Calls the users defined onchange emit function
-     *
-     * @param  string  $id
-     * @return void
      */
-    public function select2Change($data)
+    public function select2Change($data): void
     {
         if (isset($this->onchange)) {
             $this->dispatch($this->onchange, ['name' => $this->name, 'data' => $data]);

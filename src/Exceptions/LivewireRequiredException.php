@@ -2,6 +2,4 @@
 
 namespace JackBayliss\LivewireSelect2\Exceptions;
 
-class LivewireRequiredException extends \Exception
-{
-}
+class LivewireRequiredException extends \Exception {}
