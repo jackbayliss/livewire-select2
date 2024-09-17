@@ -4,6 +4,7 @@ namespace JackBayliss\LivewireSelect2\Tests;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 use JackBayliss\LivewireSelect2\LivewireSelect2ServiceProvider;
+use Livewire\LivewireServiceProvider;
 use Orchestra\Testbench\TestCase as Orchestra;
 
 class TestCase extends Orchestra
@@ -21,6 +22,7 @@ class TestCase extends Orchestra
     {
         return [
             LivewireSelect2ServiceProvider::class,
+            LivewireServiceProvider::class
         ];
     }
 
