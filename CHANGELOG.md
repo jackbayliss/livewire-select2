@@ -2,6 +2,15 @@
 
 All notable changes to `livewire-select2` will be documented in this file.
 
+## 1.1.3 - 2024-09-17
+
+### What's Changed
+
+* Bump dependabot/fetch-metadata from 2.1.0 to 2.2.0 by @dependabot in https://github.com/jackbayliss/livewire-select2/pull/6
+* Add meaningful tests by @jackbayliss in https://github.com/jackbayliss/livewire-select2/pull/7
+
+**Full Changelog**: https://github.com/jackbayliss/livewire-select2/compare/1.1.2...1.1.3
+
 ## 1.1.2 - 2024-05-04
 
 ### What's Changed
