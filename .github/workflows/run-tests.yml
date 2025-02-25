@@ -23,13 +23,13 @@ jobs:
         include:
           - laravel: 12.*
             testbench: 10.*
-            pest: ^3.0
+            pest: 3.*
           - laravel: 11.*
             testbench: 9.*
-            pest: ^3.0
+            pest: 3.*
           - laravel: 10.*
             testbench: 8.*
-            pest: ^2.0
+            pest: 2.*
 
 
     name: P${{ matrix.php }} - L${{ matrix.laravel }} - ${{ matrix.stability }} - ${{ matrix.os }} - ${{ matrix.pest }}
