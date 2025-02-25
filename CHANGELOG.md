@@ -2,6 +2,16 @@
 
 All notable changes to `livewire-select2` will be documented in this file.
 
+## 1.1.4 - 2025-02-25
+
+### What's Changed
+
+* Bump dependabot/fetch-metadata from 2.2.0 to 2.3.0 by @dependabot in https://github.com/jackbayliss/livewire-select2/pull/8
+* Bump aglipanci/laravel-pint-action from 2.4 to 2.5 by @dependabot in https://github.com/jackbayliss/livewire-select2/pull/9
+* 12 upgrade by @jackbayliss in https://github.com/jackbayliss/livewire-select2/pull/10
+
+**Full Changelog**: https://github.com/jackbayliss/livewire-select2/compare/1.1.3...1.1.4
+
 ## 1.1.3 - 2024-09-17
 
 ### What's Changed
