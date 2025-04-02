@@ -4,7 +4,7 @@
 Below is currently being supported with security updates.
 | Version | Supported          |
 | ------- | ------------------ |
-| 1.1     | :white_check_mark: |
+| Latest Release     | :white_check_mark: |
 
 
 ## Reporting a Vulnerability
