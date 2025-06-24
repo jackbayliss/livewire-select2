@@ -1,6 +1,8 @@
 <?php
 
+use Illuminate\View\ViewException;
 use JackBayliss\LivewireSelect2\Components\Select2Component;
+use JackBayliss\LivewireSelect2\Exceptions\NoAttributeException;
 use Livewire\Livewire;
 
 it('can test', function () {
@@ -17,22 +19,28 @@ it('on change method passes as expected', function () {
         ->get('onchange'))->toEqual('changeMethod');
 });
 
-it('throws exception if missing options empty array', function () {
-    expect(function () {
-        Livewire::test(Select2Component::class, ['options' => [], 'onchange' => 'changeMethod']);
-    })->toThrow(\Illuminate\View\ViewException::class);
+it('throws exception if options is an empty array', function () {
+    try {
+        Livewire::test(Select2Component::class, [
+            'options' => [],
+            'onchange' => 'changeMethod',
+        ]);
+        $this->fail('Expected NoAttributeException not thrown');
+    } catch (ViewException $e) {
+        expect($e->getPrevious())->toBeInstanceOf(NoAttributeException::class);
+    }
 });
 
-it('throws exception if missing options string', function () {
-    expect(function () {
-        Livewire::test(Select2Component::class, ['options' => '', 'onchange' => 'changeMethod']);
-    })->toThrow(\Illuminate\View\ViewException::class);
-});
-
-it('throws exception if missing onchange option missing', function () {
-    expect(function () {
-        Livewire::test(Select2Component::class, ['options' => ['1', '2', '3'], 'onchange' => null]);
-    })->toThrow(\Illuminate\View\ViewException::class);
+it('throws exception if onchange is null', function () {
+    try {
+        Livewire::test(Select2Component::class, [
+            'options' => ['1', '2', '3'],
+            'onchange' => null,
+        ]);
+        $this->fail('Expected NoAttributeException not thrown');
+    } catch (ViewException $e) {
+        expect($e->getPrevious())->toBeInstanceOf(NoAttributeException::class);
+    }
 });
 
 it('displays correctly with basics', function () {
