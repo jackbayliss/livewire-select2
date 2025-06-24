@@ -3,31 +3,37 @@
 namespace JackBayliss\LivewireSelect2\Components;
 
 use Illuminate\Support\Str;
+use Illuminate\View\View;
 use JackBayliss\LivewireSelect2\Exceptions\NoAttributeException;
 use Livewire\Component;
 
 class Select2Component extends Component
 {
-    public ?string $id = null;
-
-    public ?string $name = null;
-
-    public ?string $model = null;
-
-    public ?array $options = [];
-
-    public bool $multiple = false;
-
-    public ?string $onchange;
-
-    public ?string $class;
-
     protected $listeners = ['select2Change'];
+
+    /**
+     * @param string|null $name
+     * @param array $options
+     * @param bool $multiple
+     * @param string|null $model
+     * @param string|null $onchange
+     * @param string|null $class
+     * @param string|null $id
+     */
+    public function __construct(
+        public ?string $name = null,
+        public array $options = [],
+        public bool $multiple = false,
+        public ?string $model = null,
+        public ?string $onchange = null,
+        public ?string $class = null,
+        public ?string $id = null
+    ) {}
 
     /**
      * @throws NoAttributeException
      */
-    public function mount()
+    public function mount(): void
     {
 
         $this->id = Str::uuid();
@@ -49,7 +55,7 @@ class Select2Component extends Component
         }
     }
 
-    public function render()
+    public function render(): View
     {
         $this->dispatch('livewire-select2-init', $this->id);
 
