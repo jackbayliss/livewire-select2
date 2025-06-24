@@ -11,15 +11,6 @@ class Select2Component extends Component
 {
     protected $listeners = ['select2Change'];
 
-    /**
-     * @param string|null $name
-     * @param array $options
-     * @param bool $multiple
-     * @param string|null $model
-     * @param string|null $onchange
-     * @param string|null $class
-     * @param string|null $id
-     */
     public function __construct(
         public ?string $name = null,
         public array $options = [],
@@ -37,6 +28,7 @@ class Select2Component extends Component
     {
 
         $this->id = Str::uuid();
+
         if (! isset($this->options) || count($this->options) == 0) {
             throw new NoAttributeException('You must specify an options array to the select2 component and it must include more than 0 item/s!');
         }
