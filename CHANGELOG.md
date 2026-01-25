@@ -2,6 +2,20 @@
 
 All notable changes to `livewire-select2` will be documented in this file.
 
+## Release 1.2 - 2026-01-25
+
+### What's Changed
+
+* Improve tests by @jackbayliss in https://github.com/jackbayliss/livewire-select2/pull/14
+* Bump aglipanci/laravel-pint-action from 2.5 to 2.6 by @dependabot[bot] in https://github.com/jackbayliss/livewire-select2/pull/15
+* Bump actions/checkout from 4 to 5 by @dependabot[bot] in https://github.com/jackbayliss/livewire-select2/pull/16
+* Bump stefanzweifel/git-auto-commit-action from 6 to 7 by @dependabot[bot] in https://github.com/jackbayliss/livewire-select2/pull/17
+* Bump actions/checkout from 5 to 6 by @dependabot[bot] in https://github.com/jackbayliss/livewire-select2/pull/18
+* Bump dependabot/fetch-metadata from 2.4.0 to 2.5.0 by @dependabot[bot] in https://github.com/jackbayliss/livewire-select2/pull/19
+* Support Livewire 4 by @jackbayliss in https://github.com/jackbayliss/livewire-select2/pull/21
+
+**Full Changelog**: https://github.com/jackbayliss/livewire-select2/compare/1.1.5...1.2
+
 ## 1.1.5 - 2025-06-24
 
 ### What's Changed
