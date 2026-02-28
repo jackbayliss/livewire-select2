@@ -2,6 +2,14 @@
 
 All notable changes to `livewire-select2` will be documented in this file.
 
+## 1.3 - 2026-02-28
+
+### What's Changed
+
+* Support Laravel 13 by @jackbayliss in https://github.com/jackbayliss/livewire-select2/pull/22
+
+**Full Changelog**: https://github.com/jackbayliss/livewire-select2/compare/1.2...1.3
+
 ## Release 1.2 - 2026-01-25
 
 ### What's Changed
