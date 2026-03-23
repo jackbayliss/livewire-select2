@@ -7,10 +7,7 @@
 
 Easy to use Livewire component specifically for Select2. 
 
-Supports: 
-- Laravel 10
-- Laravel 11
-- Laravel 12
+Supports Laravel 10, 11, 12, 13
 
 ## Installation
 
